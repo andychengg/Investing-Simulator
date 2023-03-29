@@ -2,7 +2,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 
 
-export const loginUser = async (email: string, password: string): Promise<boolean> => {
+const loginUser = async (email: string, password: string): Promise<boolean> => {
     const data = {
         email: email,
         password: password
@@ -28,7 +28,7 @@ export const loginUser = async (email: string, password: string): Promise<boolea
     return result;
 };
 
-export const verifyUser = async (token: any) => {
+const verifyUser = async (token: any) => {
     const axiosInstance = axios.create({
         baseURL: process.env.REACT_APP_NODE_URL,
     });
@@ -50,7 +50,7 @@ export const verifyUser = async (token: any) => {
     return result;
 }
 
-export const registerUser = async (firstName: string, lastName: string, password: string, email: string, phoneNumber: string) => {
+const registerUser = async (firstName: string, lastName: string, password: string, email: string, phoneNumber: string) => {
     const data = {
         firstName,
         lastName,
@@ -73,4 +73,16 @@ export const registerUser = async (firstName: string, lastName: string, password
         });
 
     return result;
+}
+
+const getProfile = () => {
+
+}
+
+
+export {
+    registerUser,
+    verifyUser,
+    loginUser,
+    getProfile,
 }

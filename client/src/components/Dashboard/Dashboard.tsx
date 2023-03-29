@@ -1,21 +1,28 @@
 import React, { useState, useEffect } from 'react';
-
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
-import { verifyUser } from 'api/Profile/User';
 
+/** Components **/
 import { Divider } from 'primereact/divider';
 import { Chart } from 'primereact/chart';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import StockTable from 'components/StockDataTable/StockTable';
 
+/** API **/
+import { verifyUser,  } from 'api/Profile/User';
+
+/** Styling **/
 import './style.scss';
 
 const Dashboard = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
   
+  useEffect(() => {
+
+  }, []);
+
   //temporary filler data for the graph/tables
   const [chartData, setChartData] = useState({
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
